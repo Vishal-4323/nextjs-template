@@ -20,7 +20,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build the Docker image
-        run: docker build -f test-app/dockerfile -t ${{ secrets.DOCKER_USERNAME }}/nextjs-template:latest
+        run: docker build -f test-app/dockerfile -t ${{ secrets.DOCKER_USERNAME }}/nextjs-template:latest test-app/
 
       - name: Push the Docker image
         run: docker push ${{ secrets.DOCKER_USERNAME }}/nextjs-template:latest
